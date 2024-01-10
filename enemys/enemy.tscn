@@ -1,0 +1,35 @@
+[gd_scene load_steps=6 format=3 uid="uid://j5gcwb0y3ng3"]
+
+[ext_resource type="Script" path="res://enemys/enemy.gd" id="1_ry1j6"]
+[ext_resource type="Script" path="res://classes/StateMachine.gd" id="1_vjolr"]
+[ext_resource type="Script" path="res://classes/Hitbox.gd" id="2_d17be"]
+[ext_resource type="Script" path="res://classes/Hurtbox.gd" id="2_ia5sm"]
+[ext_resource type="Script" path="res://classes/Stats.gd" id="5_ftl4g"]
+
+[node name="Enemy" type="CharacterBody2D"]
+collision_layer = 4
+script = ExtResource("1_ry1j6")
+
+[node name="Graphics" type="Node2D" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="Graphics"]
+
+[node name="Hitbox" type="Area2D" parent="Graphics"]
+collision_layer = 0
+collision_mask = 8
+script = ExtResource("2_d17be")
+
+[node name="Hurtbox" type="Area2D" parent="Graphics"]
+collision_layer = 16
+collision_mask = 0
+script = ExtResource("2_ia5sm")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+
+[node name="StateMachine" type="Node" parent="."]
+script = ExtResource("1_vjolr")
+
+[node name="Stats" type="Node" parent="."]
+script = ExtResource("5_ftl4g")

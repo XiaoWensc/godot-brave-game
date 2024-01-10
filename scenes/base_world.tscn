@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://ywe4mxuqt60o"]
+
+[ext_resource type="Script" path="res://scenes/base_world.gd" id="1_fdync"]
+[ext_resource type="PackedScene" uid="uid://b6n5trobwh4au" path="res://scenes/player_2.tscn" id="1_ogqra"]
+
+[node name="BaseWorld" type="Node2D"]
+script = ExtResource("1_fdync")
+
+[node name="TileMap" type="TileMap" parent="."]
+format = 2
+
+[node name="Player2" parent="." instance=ExtResource("1_ogqra")]
+
+[node name="Camera2D" type="Camera2D" parent="Player2"]
